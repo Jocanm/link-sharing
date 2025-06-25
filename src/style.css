@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #633CFF;
+  --color-primary-hover: #BEADFF;
+  --color-light-primary: #EFEBFF;
+  --color-dark-gray: #333333;
+  --color-gray: #737373;
+  --color-borders: #D9D9D9;
+  --color-light-gray: #FAFAFA;
+  --color-red: #FF3939
+}
+
+body {
+  font-family: "Instrument Sans", sans-serif;
+}
