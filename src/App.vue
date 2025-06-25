@@ -1,9 +1,11 @@
 <script setup lang="ts">
-import { config } from './lib/config';
+import AuthLayout from '@/modules/auth/components/layout/AuthLayout.vue';
 </script>
 
 <template>
-  <div>hola {{ config.VITE_POCKETBASE_URL }}</div>
+  <main>
+    <AuthLayout />
+  </main>
 </template>
 
 <style scoped>
