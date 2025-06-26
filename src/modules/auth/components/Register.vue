@@ -2,9 +2,24 @@
 import Button from '@/components/ui/Button.vue';
 import Card from '@/components/ui/Card.vue';
 import Input from '@/components/ui/Input.vue';
-import { LockKeyhole, Mail } from 'lucide-vue-next';
-import ChangePageMsg from './ChangePageMsg.vue';
 import Text from '@/components/ui/Text.vue';
+import type { RegisterCredentials } from '@/models/auth';
+import { LockKeyhole, Mail } from 'lucide-vue-next';
+import { reactive } from 'vue';
+import { useRegister } from '../composables/useRegister';
+import ChangePageMsg from './ChangePageMsg.vue';
+
+const formData = reactive<RegisterCredentials>({
+  email: '',
+  password: '',
+  passwordConfirm: '',
+})
+
+const { onSubmit, isLoading } = useRegister()
+
+const handleSubmit = () => {
+  onSubmit(formData)
+}
 
 </script>
 
@@ -14,11 +29,13 @@ import Text from '@/components/ui/Text.vue';
       <Text class="text-heading-m text-2xl">Login</Text>
       <Text class="text-body-m text-gray">Add your details below to get back into the app</Text>
     </div>
-    <div class="space-y-6">
-      <Input placeholder="e.g. alex@email.com" :icon="Mail" label="Email address" />
-      <Input placeholder="Al least 8 characters" :icon="LockKeyhole" label="Create password" />
-      <Input placeholder="Al least 8 characters" :icon="LockKeyhole" label="Confirm password" />
-      <Button class="w-full">
+    <form class="space-y-6" @submit.prevent="handleSubmit">
+      <Input placeholder="e.g. alex@email.com" :icon="Mail" label="Email address" v-model="formData.email" />
+      <Input type="password" placeholder="Al least 8 characters" :icon="LockKeyhole" label="Create password"
+        v-model="formData.password" />
+      <Input type="password" placeholder="Al least 8 characters" :icon="LockKeyhole" label="Confirm password"
+        v-model="formData.passwordConfirm" />
+      <Button class="w-full" type="submit" :disabled="isLoading">
         Iniciar sesión
       </Button>
       <ChangePageMsg routeName="Login">
@@ -29,6 +46,6 @@ import Text from '@/components/ui/Text.vue';
           Login
         </template>
       </ChangePageMsg>
-    </div>
+    </form>
   </Card>
 </template>

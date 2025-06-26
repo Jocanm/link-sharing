@@ -6,10 +6,6 @@ export const login = async ({ email, password }: LoginCredentials) => {
   return await pb.collection(getCollection('users')).authWithPassword(email, password);
 }
 
-export const register = async ({ email, password, confirmPassword }: RegisterCredentials) => {
-  return await pb.collection(getCollection('users')).create({
-    email,
-    password,
-    confirmPassword
-  });
+export const register = async (data: RegisterCredentials) => {
+  return await pb.collection(getCollection('users')).create(data);
 }
