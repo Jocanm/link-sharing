@@ -25,11 +25,9 @@
 
   --text-body-s: 0.75rem;
   --text-body-s--font-weight: 400;
-}
 
-
-@utility text-* {
-  color: var(--color-dark-gray);
+  /* buttons */
+  --button-primary-bg: var(--color-primary);
 }
 
 /* @layer components {
