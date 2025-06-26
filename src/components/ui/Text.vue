@@ -1,10 +1,12 @@
 <script lang="ts" setup>
 
-defineProps()
+withDefaults(defineProps<{ component?: string }>(), {
+  component: 'p'
+})
 </script>
 
 <template>
-  <p v-bind="$attrs">
+  <component :is="component" v-bind="$attrs">
     <slot></slot>
-  </p>
+  </component>
 </template>

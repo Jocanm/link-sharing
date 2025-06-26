@@ -2,7 +2,8 @@
 import Button from '@/components/ui/Button.vue';
 import Card from '@/components/ui/Card.vue';
 import Input from '@/components/ui/Input.vue';
-import Text from '@/components/ui/Text.vue';
+import Subtitle from '@/components/ui/Subtitle.vue';
+import Title from '@/components/ui/Title.vue';
 import { LockKeyhole, Mail } from 'lucide-vue-next';
 import { ref } from 'vue';
 import { useLogin } from '../composables/useLogin';
@@ -18,8 +19,8 @@ const { onSubmit, isLoading } = useLogin()
 <template>
   <Card class="p-0 bg-transparent sm:bg-white sm:p-10 space-y-10">
     <div class="space-y-2">
-      <Text class="text-heading-m text-2xl">Login</Text>
-      <Text class="text-body-m text-gray">Add your details below to get back into the app</Text>
+      <Title>Login</Title>
+      <Subtitle>Add your details below to get back into the app</Subtitle>
     </div>
     <form class="space-y-6" @submit.prevent="onSubmit({ email, password })">
       <Input placeholder="e.g. alex@email.com" :icon="Mail" label="Email address" v-model="email" />

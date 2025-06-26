@@ -2,12 +2,13 @@
 import Button from '@/components/ui/Button.vue';
 import Card from '@/components/ui/Card.vue';
 import Input from '@/components/ui/Input.vue';
-import Text from '@/components/ui/Text.vue';
+import Title from '@/components/ui/Title.vue';
 import type { RegisterCredentials } from '@/models/auth';
 import { LockKeyhole, Mail } from 'lucide-vue-next';
 import { reactive } from 'vue';
 import { useRegister } from '../composables/useRegister';
 import ChangePageMsg from './ChangePageMsg.vue';
+import Subtitle from '@/components/ui/Subtitle.vue';
 
 const formData = reactive<RegisterCredentials>({
   email: '',
@@ -26,8 +27,8 @@ const handleSubmit = () => {
 <template>
   <Card class="p-0 bg-transparent md:bg-white md:p-10 space-y-10">
     <div class="space-y-2">
-      <Text class="text-heading-m text-2xl">Login</Text>
-      <Text class="text-body-m text-gray">Add your details below to get back into the app</Text>
+      <Title>Login</Title>
+      <Subtitle>Add your details below to get back into the app</Subtitle>
     </div>
     <form class="space-y-6" @submit.prevent="handleSubmit">
       <Input placeholder="e.g. alex@email.com" :icon="Mail" label="Email address" v-model="formData.email" />
