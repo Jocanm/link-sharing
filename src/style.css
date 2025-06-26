@@ -30,6 +30,14 @@
   --button-primary-bg: var(--color-primary);
 }
 
+@utility text-body-* {
+  color: var(--color-dark-gray)
+}
+
+@utility text-heading-* {
+  color: var(--color-dark-gray)
+}
+
 /* @layer components {
   .text-super-m {
     @apply text-4xl font-bold text-red;

@@ -8,8 +8,8 @@ const defaultImgProps: ImgHTMLAttributes = {
 </script>
 
 <template>
-  <section class="flex gap-1.5 items-center">
-    <img src="/logo.png" alt="app logo" width="40" height="40" v-bind="defaultImgProps" />
+  <section class="flex gap-2.5 items-center">
+    <img src="/logo.png" alt="app logo" width="30" height="30" v-bind="defaultImgProps" />
     <img src="/devlinks.png" alt="app text" width="135" height="27" v-bind="defaultImgProps" />
   </section>
 </template>

@@ -3,7 +3,7 @@ import Logo from '@/components/ui/Logo.vue';
 </script>
 
 <template>
-  <section class="p-8 flex flex-col md:items-center bg-light-gray h-full gap-14">
+  <section class="p-8 flex flex-col sm:items-center bg-light-gray h-full gap-14">
     <div><Logo /></div>
     <RouterView />
   </section>
