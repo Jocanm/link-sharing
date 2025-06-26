@@ -8,5 +8,3 @@ defineProps()
     <slot></slot>
   </p>
 </template>
-
-<style lang="" scoped></style>
