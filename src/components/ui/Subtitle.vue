@@ -4,7 +4,7 @@ import Text from './Text.vue';
 </script>
 
 <template>
-  <Text class="text-body-m text-gray" component="h2" v-bind="$attrs">
+  <Text class="text-body-m text-gray" tag="h2" v-bind="$attrs">
     <slot></slot>
   </Text>
 </template>

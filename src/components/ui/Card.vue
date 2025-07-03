@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { tw } from '@/utils/tw';
+import { cn } from '@/utils/cn';
 import { computed } from 'vue';
 
 interface Props {
@@ -8,7 +8,7 @@ interface Props {
 
 const props = defineProps<Props>()
 
-const mergedClass = computed(() => tw(
+const mergedClass = computed(() => cn(
   'bg-white rounded-lg p-10',
   props.class
 ))

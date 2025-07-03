@@ -1,9 +1,8 @@
 <script lang="ts" setup>
-import { tw } from '@/utils/tw';
+import { cn } from '@/utils/cn';
 import { computed } from 'vue';
 
-
-type Props = {
+export type InputProps = {
   id?: string
   icon?: Function
   label?: string;
@@ -12,7 +11,7 @@ type Props = {
   modelValue?: string | number;
 }
 
-const props = defineProps<Props>()
+const props = defineProps<InputProps>()
 const emit = defineEmits(['update:modelValue'])
 
 const handleInput = (event: Event) => {
@@ -21,7 +20,7 @@ const handleInput = (event: Event) => {
 };
 
 const computedClass = computed(() => {
-  return tw([
+  return cn([
     'border border-borders rounded-lg py-2 text-body-m outline-0 w-full',
     'placeholder:text-body-m placeholder:opacity-50 focus:border focus:border-primary focus:caret-primary',
     props.icon ? 'px-11' : 'px-4'
