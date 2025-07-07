@@ -3,9 +3,8 @@ import Button from '@/components/ui/Button.vue';
 import Card from '@/components/ui/Card.vue';
 import Input from '@/components/ui/Input.vue';
 import Subtitle from '@/components/ui/Subtitle.vue';
-import Tab from '@/components/ui/Tab.vue';
 import Title from '@/components/ui/Title.vue';
-import { Link, LockKeyhole, Mail } from 'lucide-vue-next';
+import { LockKeyhole, Mail } from 'lucide-vue-next';
 import { ref } from 'vue';
 import { useLogin } from '../composables/useLogin';
 import ChangePageMsg from './ChangePageMsg.vue';
@@ -28,7 +27,7 @@ const { onSubmit, isLoading } = useLogin()
       <Input type="password" placeholder="Enter your password" :icon="LockKeyhole" label="Password"
         v-model="password" />
       <Button class="w-full" type="submit" :disabled="isLoading">
-        Iniciar sesión
+        Login
       </Button>
       <ChangePageMsg routeName="Register">
         <template #message>

@@ -27,8 +27,8 @@ const handleSubmit = () => {
 <template>
   <Card class="p-0 bg-transparent md:bg-white md:p-10 space-y-10">
     <div class="space-y-2">
-      <Title>Login</Title>
-      <Subtitle>Add your details below to get back into the app</Subtitle>
+      <Title>Create Account</Title>
+      <Subtitle>Let's get you started sharing your links!</Subtitle>
     </div>
     <form class="space-y-6" @submit.prevent="handleSubmit">
       <Input placeholder="e.g. alex@email.com" :icon="Mail" label="Email address" v-model="formData.email" />
@@ -37,7 +37,7 @@ const handleSubmit = () => {
       <Input type="password" placeholder="Al least 8 characters" :icon="LockKeyhole" label="Confirm password"
         v-model="formData.passwordConfirm" />
       <Button class="w-full" type="submit" :disabled="isLoading">
-        Iniciar sesión
+        Create new account
       </Button>
       <ChangePageMsg routeName="Login">
         <template #message>
